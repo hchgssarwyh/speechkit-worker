@@ -11,7 +11,7 @@ load_dotenv()
 # Доступ к переменным окружения
 api_key = os.getenv('API_KEY')
 folder_id = os.getenv('FOLDER_ID')
-audio_file_path = 'output.wav'
+audio_file_path = '/path/to/your/audio/file'
 
 # Открываем аудиофайл и кодируем в base64
 with open(audio_file_path, 'rb') as audio_file:
@@ -63,6 +63,7 @@ url = f'https://stt.api.cloud.yandex.net/stt/v3/recognizeFileAsync'
 
 
 # Выполнение запроса
+# После выполнения нужно сохранитть поле id, чтобы потом проверять выполнение
 try:
     response = requests.post(url, headers=headers, data=json.dumps(data))
     response.raise_for_status()  # Проверяем на ошибки HTTP

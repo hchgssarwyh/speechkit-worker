@@ -14,8 +14,10 @@ headers = {
     'Authorization': f'Bearer {api_key}',
     'x-folder-id': folder_id
 }
+# В это поле нужно вставить id, который мы получили при отправке файла
+file_id = 'your_file_id'
 # Выполняем запрос к API
-result = requests.get(url + '?operationId=' + 'f8dokq5pfkshqpmukhqu', headers=headers)
+result = requests.get(url + '?operationId=' + file_id, headers=headers)
 
 response_text = result.text
 json_objects = response_text.splitlines()  # Разбиваем ответ по строкам
